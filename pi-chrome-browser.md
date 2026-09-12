@@ -69,7 +69,13 @@ omp install .                       # 本地路径安装，无外部下载通道
 
 ```bash
 cd pi-chrome-mirror && git pull
-omp install .                # 重装新版本
+omp install .                # 装成软链时，git pull 即时生效；装成实拷贝时需重跑
+```
+
+`omp install` 在 macOS 上遇到**同名实目录**会报 `EPERM: operation not permitted, unlink ...`（它对该目录调 `unlink` 而非 `rm -rf`，已实测复现）。遇到时先删旧目录再装：
+
+```bash
+rm -rf ~/.omp/plugins/node_modules/pi-chrome && omp install .
 ```
 
 升级后：OMP 中 `/reload`，并在 `chrome://extensions` 重载 "Pi Chrome Connector"，再跑 `/chrome doctor`。

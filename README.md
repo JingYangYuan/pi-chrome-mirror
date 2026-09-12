@@ -34,6 +34,20 @@ omp install .                 # 本地路径安装；先加 --dry-run 看计划
 （或下载 [Releases](https://github.com/JingYangYuan/pi-chrome-mirror/releases) 里的 `pi-chrome-companion-0.15.51.zip` 解压后选择解压目录）。
 扩展名 `Pi Chrome Connector`；`/chrome onboard` 也会显示安装后的扩展目录路径。
 
+### 升级本仓库
+
+```bash
+cd pi-chrome-mirror && git pull
+omp install .                 # 软链形态下 git pull 即时生效
+```
+
+`omp install` 在 macOS 上遇到**同名实目录**会报 `EPERM: operation not permitted, unlink ...`
+（内部对目录调 `unlink`，已实测复现）。遇到时先删旧目录再装：
+
+```bash
+rm -rf ~/.omp/plugins/node_modules/pi-chrome && omp install .
+```
+
 ## 每次 CNKI 阶段前的四项验收
 
 | 步骤 | 命令 | 通过标准 |
