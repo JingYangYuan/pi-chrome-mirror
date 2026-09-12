@@ -1,0 +1,80 @@
+{
+	"name": "pi-chrome",
+	"version": "0.15.51",
+	"scripts": {
+		"test": "node test-suite/unit/csp-eval.test.mjs && node test-suite/unit/automation-target.test.mjs && node test-suite/unit/session-cleanup.test.mjs && node test-suite/unit/background-policy.test.mjs && node test-suite/unit/input-reliability.test.mjs && node test-suite/unit/chrome-command.test.mjs",
+		"version": "node scripts/sync-manifest-version.js",
+		"prepublishOnly": "node scripts/sync-manifest-version.js"
+	},
+	"description": "Let Pi use your existing signed-in Chrome profile after explicit authorization.",
+	"keywords": [
+		"pi",
+		"pi-package",
+		"pi-extension",
+		"pi-agent",
+		"chrome",
+		"chrome-extension",
+		"browser",
+		"browser-automation",
+		"browser-control",
+		"web-automation",
+		"agent",
+		"ai-agent",
+		"llm-agent",
+		"llm-tools",
+		"agentic",
+		"playwright-alternative",
+		"puppeteer-alternative",
+		"selenium-alternative",
+		"cdp-alternative",
+		"authenticated-session",
+		"real-profile",
+		"web-debugging",
+		"web-scraping",
+		"screenshot",
+		"automation-tools",
+		"browser-use",
+		"stagehand-alternative"
+	],
+	"license": "MIT",
+	"author": {
+		"name": "tianrendong",
+		"company": "Earendil Inc."
+	},
+	"homepage": "https://github.com/tianrendong/pi-chrome#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/tianrendong/pi-chrome.git"
+	},
+	"bugs": {
+		"url": "https://github.com/tianrendong/pi-chrome/issues"
+	},
+	"type": "commonjs",
+	"files": [
+		"extensions",
+		"docs",
+		"test-suite",
+		"README.md",
+		"CHANGELOG.md",
+		"CONTRIBUTING.md",
+		"SECURITY.md",
+		"LICENSE"
+	],
+	"pi": {
+		"extensions": [
+			"./extensions/chrome-profile-bridge/index.ts"
+		]
+	},
+	"peerDependencies": {
+		"@earendil-works/pi-coding-agent": "*",
+		"typebox": "*"
+	},
+	"peerDependenciesMeta": {
+		"@earendil-works/pi-coding-agent": {
+			"optional": true
+		},
+		"typebox": {
+			"optional": true
+		}
+	}
+}
