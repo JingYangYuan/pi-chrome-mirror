@@ -5,6 +5,7 @@
 本文件是 `browser_control` 通用能力在 OMP（Oh My Pi / Pi coding agent）宿主上的后端配置与适配协议。CNKI kns8s 闭环（[CNKI kns8s 闭环协议](https://github.com/JingYangYuan/paper-master-4ss/blob/main/modules/lit/references/cnki-kns8s-closed-loop.md)）的浏览器操纵可由本后端或 ZCode 内置 browser-use 承担，两者共用同一闭环协议与同一来源不可替代铁律。
 
 - 适用宿主：OMP。ZCode 宿主读 [CNKI kns8s 闭环协议](https://github.com/JingYangYuan/paper-master-4ss/blob/main/modules/lit/references/cnki-kns8s-closed-loop.md) §2.1 的 browser-use 分支。
+- 备选后端：本后端不可用（`chrome_*` 工具集未挂载、或本机 relay/扩展始终 `never connected`）时，OMP 宿主改用 Eval `browser` 备选后端——独立 profile Chrome（推荐，无扩展依赖）或 relay，见 [CNKI kns8s 闭环协议](https://github.com/JingYangYuan/paper-master-4ss/blob/main/modules/lit/references/cnki-kns8s-closed-loop.md) §2.4（2026-09-27 实测）。
 - 能力映射：`browser_control`（见 [`runtime-adapter.md`](https://github.com/JingYangYuan/paper-master-4ss/blob/main/references/runtime-adapter.md)、[`agent-software-adapters.md`](https://github.com/JingYangYuan/paper-master-4ss/blob/main/references/agent-software-adapters.md)）。
 - 本文件不含任何 CNKI 检索式、结果解析或下载逻辑；那些属于闭环协议。
 
